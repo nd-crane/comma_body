@@ -3,9 +3,10 @@ Resources for experimenting with Comma.ai Comma Body and Agentic Architectures u
 
 ## Primary Resources
 - [Comma.ai](https://comma.ai/)
+- [Comma Body Assembly](https://comma.ai/setup/comma-body)
+- [Comma Body Firmware](https://github.com/commaai/body)
 - [Bodyjim blog announcement](https://blog.comma.ai/096release/#bodyjim)
 - [Bodyjim GitHub](https://github.com/commaai/body-jim)
-- [Comma Body Firmware](https://github.com/commaai/body)
 - [Openpilot](https://github.com/commaai/openpilot)
 
 ## Hackathon Resources
