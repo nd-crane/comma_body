@@ -18,3 +18,17 @@ Resources for experimenting with Comma.ai Comma Body and Agentic Architectures u
 - [Ben Swolo](https://devpost.com/software/ben-swolo-learns-to-drive-through-hallways)
 - [*Chat PID ](https://devpost.com/software/chatpid)
 - [*EffecientNet-b0 end-to-end indoor navigation](https://devpost.com/software/klay-dunker)
+
+
+## PDM Instructions
+Setup [pdm](https://pdm.fming.dev/) and install dependencies:
+
+Make PDM use venv by default.
+```bash
+pdm config python.use_venv false
+```
+
+Install in venv
+```bash
+pdm install
+```
