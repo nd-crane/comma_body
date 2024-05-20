@@ -20,6 +20,9 @@ Resources for experimenting with Comma.ai Comma Body and Agentic Architectures u
 - [*EffecientNet-b0 end-to-end indoor navigation](https://devpost.com/software/klay-dunker)
 
 
+## Community Resources
+- [Here’s a list of all software available for the Comma 3X/3/2](https://bderkhan.com/comma-ai-openpilot/#google_vignette)
+
 ## PDM Instructions
 Setup [pdm](https://pdm.fming.dev/) and install dependencies:
 
