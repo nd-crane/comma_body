@@ -11,8 +11,8 @@ def process_images_in_folder(folder_path):
     image_files = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if file.endswith(('.jpeg','png'))]
     return image_files
 
-def evaluate_image_once(image_path):
-    encoded_image = encode_image(image_path)
+def evaluate_image_once(image):
+    encoded_image = encode_image(image)
     response = ollama.chat(
         model='llava-phi3',
         messages=[
@@ -35,9 +35,9 @@ image_files = process_images_in_folder(folder_path)
 results = []
 
 # Loop through each image and get response one by one
-for image_path in image_files:
-    response = evaluate_image_once(image_path)
-    image_filename = os.path.basename(image_path)
+for image in image_files:
+    response = evaluate_image_once(image)
+    image_filename = os.path.basename(image)
     result = f"{image_filename}: {response}"
     results.append(result)
     print(result)
