@@ -22,13 +22,6 @@ def run_forward_movement(body_ip, cameras, distance,interval, speed):
   move_forward(env, distance, speed)
   env.close()
   
-  while True:
-    env.render()
-    move_forward(env,distance,speed)
-    pygame.time.delay(int(interval * 1000))
-
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Forward movement controller for the body")
     parser.add_argument("body_ip", help="IP address of the body")
