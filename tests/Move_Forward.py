@@ -15,7 +15,7 @@ def move_forward(env, distance, speed):
     env.step(action)
     pygame.time.delay(100)
   
-def run_forward_movement(body_ip, cameras, distance,interval, speed):
+def run_forward_movement(body_ip, cameras, distance,speed):
   env = BodyEnv(body_ip, cameras,["accelerometer", "gyroscope", "gpsLocation"], render_mode="human")
   env.reset()
   env.render()
