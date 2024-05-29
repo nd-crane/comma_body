@@ -18,7 +18,10 @@ def move_forward(env, distance, speed):
 def run_forward_movement(body_ip, cameras, distance,interval, speed):
   env = BodyEnv(body_ip, cameras,["accelerometer", "gyroscope", "gpsLocation"], render_mode="human")
   env.reset()
-
+  env.render()
+  move_forward(env, distance, speed)
+  env.close()
+  
   while True:
     env.render()
     move_forward(env,distance,speed)
