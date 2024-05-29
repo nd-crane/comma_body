@@ -33,4 +33,4 @@ if __name__ == "__main__":
     # Initialize pygame
     pygame.init()
 
-    run_forward_movement(args.body_ip, args.cameras, args.distance, args.interval, args.speed)
+    run_forward_movement(args.body_ip, args.cameras, args.distance, args.speed)
