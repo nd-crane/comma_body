@@ -27,7 +27,6 @@ if __name__ == "__main__":
     parser.add_argument("body_ip", help="IP address of the body")
     parser.add_argument("cameras", nargs="*", default=["driver"], help="List of cameras to render")
     parser.add_argument("--distance", type=float, default=1.0, help="Distance to move forward in inches")
-    parser.add_argument("--interval", type=float, default=5.0, help="Interval between movements in seconds")
     parser.add_argument("--speed", type=float, default=0.2, help="Speed of the movement (inches per second)")
     args = parser.parse_args()
 
