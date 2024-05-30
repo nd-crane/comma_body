@@ -8,8 +8,8 @@ import pygame
 
 
 def move_forward(env, distance, speed):
-  duration = distance / speed
-  action = [-1,0]
+  duration = distance / abs(speed)
+  action = [-speed,0]
   start_time = pygame.time.get_ticks()
   while (pygame.time.get_ticks() - start_time) < (duration * 1000):
     env.step(action)
