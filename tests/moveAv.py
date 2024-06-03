@@ -6,7 +6,7 @@ import pygame
 
 # Global variables
 BODY_IP = "10.12.54.125"
-SPEED = 0.2
+SPEED = 0.5
 CAMERAS = ["driver"]
 
 def move_forward(env, distance, speed):
