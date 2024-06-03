@@ -1,18 +1,18 @@
-#!/usr/bin/env python3
+#!/Users/connerrauguth/Research/myenv/bin/python
 
 import argparse
 from bodyjim import BodyEnv
 import pygame
 
 # Global variables
-BODY_IP = "10.12.1.88"
+BODY_IP = "10.12.54.125"
 SPEED = 0.2
 CAMERAS = ["driver"]
 
 def move_forward(env, distance, speed):
     '''Function that controls the movement of the agent.'''
     # Determine duration of movement
-    duration = distance * 12 / abs(speed)
+    duration = distance / abs(speed)
     
     # Sets the action of the robot
     action = [-speed, 0]
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Sample input
-    input = {'image': 1, 'circleFound': 1, 'distance': 3}
+    input = {'image': 1, 'circleFound': 1, 'distance': 1}
     
     # Move the agent
     if input['circleFound'] == 1:
