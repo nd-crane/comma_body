@@ -1,4 +1,4 @@
-#!/Users/connerrauguth/Research/myenv/bin/python
+#!/usr/bin/env python3
 
 import argparse
 from bodyjim import BodyEnv
