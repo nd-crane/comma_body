@@ -7,7 +7,7 @@ import numpy as np
 import pygame
 
 save_dir = 'Pictures_From_Comma'
-body_ip = '10.12.1.88'
+body_ip = '10.12.54.125'
 cameras = ["wideRoad"]
 def Capture_and_Save_Frames(env, save_dir, interval, num_frames = 3):
     frame_count = 0
@@ -29,7 +29,7 @@ def Capture_and_Save_Frames(env, save_dir, interval, num_frames = 3):
         pygame.time.delay(int(interval * 1000))
         frame_count += 1
 
-def main(body_ip, cameras,save_dir,interval):
+def main(save_dir,interval):
     #Ensure the save directory exists
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -43,7 +43,7 @@ def main(body_ip, cameras,save_dir,interval):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Frame capture from Comma Body video stream")
-    parser.argparse.add_argument("--interval", type=float, default = 1.0, help = "Interval between frames in seconds")
+    parser.add_argument("--interval", type=float, default = 1.0, help = "Interval between frames in seconds")
     args = parser.parse_args()
 
     #initilize pygame
