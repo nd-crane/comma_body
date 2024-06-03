@@ -21,7 +21,7 @@ def move_forward(env, distance, speed):
     start_time = pygame.time.get_ticks()
     while (pygame.time.get_ticks() - start_time) < (duration * 1000):
         env.step(action)
-        pygame.time.delay(100)
+        # pygame.time.delay(100)
 
 def run_forward_movement(body_ip, cameras, distance, speed):
     '''Function that will actually move the agent.'''
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     parser.add_argument("--distance", type=float, default=1.0, help="Distance to move forward in inches")
     args = parser.parse_args()
 
-    # Sample input
+    # Get motion recommendation from LLM
     input = {'image': 1, 'circleFound': 1, 'distance': 1}
     
     # Move the agent
