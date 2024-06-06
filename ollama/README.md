@@ -34,7 +34,6 @@ This script serves as a baseline for devising a search plan across an entire flo
 
 This script takes in the original floor plan and a list of rooms and creates a new adjacency list of just the given rooms.
 
-### `mapSearch.py` (Work in Progress)
+### `mapSearch.py`
 
 This script searches an adjacency list to find a blue circle. It feeds the LLM a floor plan in the form of an adjacency list, which the LLM searches using a depth-first search algorithm. The response indicates whether the blue circle was found and, if so, in which room it is located.
-- Still working out some bugs in terms of obtaining a consistant response.
