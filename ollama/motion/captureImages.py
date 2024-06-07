@@ -10,8 +10,8 @@ import pygame
 
 # Global varibales
 DIR = 'Pictures_From_Comma'
-BODY_IP = '10.12.1.88'
-CAMERAS = ["wideRoad"]
+BODY_IP = '10.12.50.52'
+CAMERAS = "wideRoad"
 
 def captureFrames(env, DIR, interval, num_frames = 3):
     ''' Captures a specified number of images and saves them to a directory'''
@@ -21,7 +21,7 @@ def captureFrames(env, DIR, interval, num_frames = 3):
         obs,_,_,_,_ = env.step([0,0])
 
         # Extract the frame from observations
-        frame = obs["cameras"]["wideRoad"]
+        frame = obs["cameras"][CAMERAS]
 
         # Convert the frame from RGB to BGR (OpenCV format)
         frame = cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
@@ -34,7 +34,7 @@ def captureFrames(env, DIR, interval, num_frames = 3):
         pygame.time.delay(int(interval * 1000))
         frame_count += 1
 
-def captureImages(BODY_IP, CAMERAS, DIR, interval):
+def captureImages(interval):
     ''' Process of actualy capturing images on comma '''
     # Initilize pygame
     pygame.init()
@@ -44,7 +44,7 @@ def captureImages(BODY_IP, CAMERAS, DIR, interval):
         os.makedirs(DIR)
     
     # Initialize the body environment
-    env = BodyEnv(BODY_IP, CAMERAS, ["accelerometer", "gyroscope", "gpsLocation"], render_mode="human")
+    env = BodyEnv(BODY_IP, [CAMERAS], ["accelerometer", "gyroscope", "gpsLocation"], render_mode="human")
     env.reset()
 
     # Capture frames
@@ -55,10 +55,10 @@ def captureImages(BODY_IP, CAMERAS, DIR, interval):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Frame capture from Comma Body video stream")
-    parser.argparse.add_argument("--interval", type=float, default = 1.0, help = "Interval between frames in seconds")
+    parser.add_argument("--interval", type=float, default = 1.0, help = "Interval between frames in seconds")
     args = parser.parse_args()
 
     # Define time interval
     interval = 1
 
-    captureImages(DIR, interval)
+    captureImages(interval)

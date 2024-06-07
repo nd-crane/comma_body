@@ -1,4 +1,4 @@
-#!/Users/connerrauguth/Research/myenv/bin/python -W ignore
+#!/home/ndcrcserver/.pyenv/versions/3.11.4/bin/python3 -W ignore
 
 ''' motionRec.py '''
 

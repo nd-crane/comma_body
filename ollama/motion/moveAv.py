@@ -5,11 +5,12 @@
 import argparse
 from bodyjim import BodyEnv
 import pygame
+from motionRec import motionRecommendation
 
 # Global variables
-BODY_IP = "10.12.54.125"
+BODY_IP = "10.12.50.52"
 SPEED = 0.5
-CAMERAS = ["driver"]
+CAMERAS = ["road"]
 
 def move_forward(env, distance, speed):
     ''' Controls the movement of the agent '''
@@ -23,7 +24,6 @@ def move_forward(env, distance, speed):
     start_time = pygame.time.get_ticks()
     while (pygame.time.get_ticks() - start_time) < (duration * 1000):
         env.step(action)
-        # pygame.time.delay(100)
 
 def moveAv(distance):
     ''' Process of actaully moving the comma '''
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Get motion recommendation from LLM
-    input = {'image': 1, 'circleFound': 1, 'distance': 1}
+    input = motionRecommendation()
     
     # Move the agent if circle is found
     if input['circleFound'] == 1:

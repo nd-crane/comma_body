@@ -1,10 +1,11 @@
-#!/Users/connerrauguth/Research/myenv/bin/python
+#!/home/ndcrcserver/.pyenv/versions/3.11.4/bin/python3
 
 ''' imageAnalysis.py '''
 
 import base64
 import ollama
 import os
+from captureImages import captureImages
 
 def encode_image(image_path):
     ''' Encodes the images in base64 '''
@@ -13,7 +14,7 @@ def encode_image(image_path):
 
 def process_images_in_folder(folder_path):
     ''' Obtains all files within given directory '''
-    image_files = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if file.endswith(('.jpeg','png'))]
+    image_files = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if file.endswith(('.jpg','png'))]
     return image_files
 
 def evaluate_image(image):
@@ -44,10 +45,14 @@ def evaluate_image(image):
 
 def imageAnalysis():
     ''' Returns a list of image descriptions '''
+    # Take pictures
+    interval = 1
+    captureImages(interval)
+    
     # Get a list of image files
-    folder_path = 'dataset'
+    folder_path = 'Pictures_From_Comma'
     image_files = process_images_in_folder(folder_path)
-
+    
     # Get a reponse for each image
     results = []
     for image in image_files:
